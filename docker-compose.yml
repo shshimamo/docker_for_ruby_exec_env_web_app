@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  # Sinatraのサンプルアプリケーション
+  app:
+    entrypoint: /docker-entrypoint.sh
+    build: .
+    volumes:
+      - .:/app
+      - app-bundle:/usr/local/bundle
+
+volumes:
+  # Bundlerでインストールされるgemを格納するボリューム
+  app-bundle:
