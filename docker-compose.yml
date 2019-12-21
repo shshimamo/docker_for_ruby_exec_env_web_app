@@ -3,10 +3,10 @@ version: "3"
 services:
   # Sinatraのサンプルアプリケーション
   app:
-    entrypoint: /docker-entrypoint.sh
     build: .
 
-    command: ruby app.rb -o 0.0.0.0
+    ports:
+      - "10080:4567"
 
     volumes:
       - .:/app
