@@ -5,6 +5,9 @@ services:
   app:
     entrypoint: /docker-entrypoint.sh
     build: .
+
+    command: ruby app.rb -o 0.0.0.0
+
     volumes:
       - .:/app
       - app-bundle:/usr/local/bundle
